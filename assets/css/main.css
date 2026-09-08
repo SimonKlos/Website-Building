@@ -148,6 +148,9 @@ small { font-size: var(--step-1); }
 .wrap--narrow { max-width: var(--wrap-narrow); }
 .section { padding-block: clamp(3.5rem, 7vw, 6.5rem); }
 .section--tight { padding-block: clamp(2.25rem, 4vw, 3.5rem); }
+/* colored full-bleed CTA band: static padding so content is clearly inset
+   from the color field on every edge */
+.band { padding: 4rem 1.75rem; }
 .stack > * + * { margin-top: 1rem; }
 .stack-lg > * + * { margin-top: 2rem; }
 
@@ -187,6 +190,9 @@ small { font-size: var(--step-1); }
   .entry { grid-template-columns: 1fr; row-gap: .5rem; }
   .entry__body { border-top: 0; }
 }
+/* hero opening entry: keep the folio marker, drop the rule slicing the H1 */
+.entry--hero .entry__body { border-top: 0; padding-top: 0; }
+.entry--hero .entry__no { padding-top: .5rem; }
 
 /* ---- Monogram seal ------------------------------------------------- */
 .seal { display: inline-flex; align-items: center; gap: .7rem; }
@@ -439,12 +445,12 @@ blockquote.pull cite { display: block; margin-top: 1rem; font-family: var(--font
 .site-footer a { color: #e7ddc8; }
 .site-footer .wordmark__name { color: #f0e7cf; }
 .site-footer .wordmark__sub { color: #a9bcae; }
-.site-footer__top { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 2rem; padding-block: clamp(2.5rem, 5vw, 3.75rem); border-bottom: 1px solid rgba(217,206,180,.2); }
+.site-footer__top { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 2rem; padding-top: 3.25rem; padding-bottom: 3.25rem; border-bottom: 1px solid rgba(217,206,180,.2); }
 .site-footer__col h3 { font-family: var(--font-reg); font-size: .76rem; letter-spacing: .18em; text-transform: uppercase; color: #a9bcae; font-weight: 600; margin-bottom: 1rem; }
 .site-footer__col ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .6rem; }
 .site-footer__col a { text-decoration: none; font-size: .95rem; }
 .site-footer__col a:hover { text-decoration: underline; text-underline-offset: 3px; }
-.site-footer__bottom { display: flex; flex-wrap: wrap; gap: .75rem 2rem; justify-content: space-between; padding-block: 1.5rem; font-family: var(--font-reg); font-size: var(--step-1); color: #a9bcae; }
+.site-footer__bottom { display: flex; flex-wrap: wrap; gap: .75rem 2rem; justify-content: space-between; padding-top: 1.75rem; padding-bottom: 1.75rem; font-family: var(--font-reg); font-size: var(--step-1); color: #a9bcae; }
 .site-footer__seal { display: flex; align-items: center; gap: .8rem; }
 @media (max-width: 46rem) { .site-footer__top { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 30rem) { .site-footer__top { grid-template-columns: 1fr; } }

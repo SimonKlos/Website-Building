@@ -11,6 +11,15 @@
         ],
         "createdAt": "2026-09-08T14:54:46.968Z",
         "reason": "Direction contract (Kontorbuch): sichtbare horizontale Buchungslinien sind das gewaehlte visuelle Weltmotiv, nicht dekorative Streifen."
+      },
+      {
+        "rule": "wide-tracking",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-09-08T15:15:15.914Z",
+        "reason": "Direction OWN-WORLD (Kontorbuch): tracked uppercase running head/register labels ('HAUPTBUCH DER BETEILIGUNGEN') are the deliberate label voice, reviewer-validated; detector misclassifies the longer uppercase label as body text."
       }
     ]
   }
