@@ -1,0 +1,7 @@
+# Impeccable review artifacts (screenshots) and hook cache — not part of the site
+.impeccable/review/
+.impeccable/hook.cache.json
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db

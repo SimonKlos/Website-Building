@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "repeating-gradient",
+        "value": "*",
+        "files": [
+          "assets/css/main.css"
+        ],
+        "createdAt": "2026-09-08T14:54:46.968Z",
+        "reason": "Direction contract (Kontorbuch): sichtbare horizontale Buchungslinien sind das gewaehlte visuelle Weltmotiv, nicht dekorative Streifen."
+      }
+    ]
+  }
+}
