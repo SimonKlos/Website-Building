@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-08T00:00:00Z",
+  "title": "Design System: Mainkontor Beteiligungen",
+  "extensions": {
+    "colorMeta": {
+      "paper": { "role": "neutral", "displayName": "Ledger Paper", "canonical": "#e7ddc8", "tonalRamp": ["#2a2519", "#453d29", "#61553a", "#7d6f4e", "#9a8b66", "#b7a988", "#d0c4a6", "#e7ddc8"] },
+      "paper-2": { "role": "neutral", "displayName": "Panel Paper", "canonical": "#ede4d1", "tonalRamp": ["#2e281b", "#4a412c", "#665b3f", "#847752", "#a2966d", "#c1b691", "#d8ceae", "#ede4d1"] },
+      "ink": { "role": "neutral", "displayName": "Iron-Gall Ink", "canonical": "#1f1b16", "tonalRamp": ["#1f1b16", "#332d24", "#4a4034", "#5c5140", "#7a6c54", "#9a8b6e", "#c0b294", "#e0d6bc"] },
+      "green": { "role": "primary", "displayName": "Kontor Green", "canonical": "#244b3b", "tonalRamp": ["#0d1c15", "#12281e", "#183527", "#1e4131", "#244b3b", "#356a54", "#5b9078", "#95bfaa"] },
+      "green-deep": { "role": "primary", "displayName": "Kontor Green Deep", "canonical": "#1a3a2d", "tonalRamp": ["#0a1811", "#0f2419", "#143022", "#1a3a2d", "#255140", "#3a7259", "#67a084", "#a1cbb4"] },
+      "green-tint": { "role": "primary", "displayName": "Green Tint Wash", "canonical": "#d9d9be", "tonalRamp": ["#33342a", "#4e4f40", "#6a6b57", "#87886f", "#a4a58a", "#c0c1a6", "#d9d9be", "#ecece0"] },
+      "oxblood": { "role": "secondary", "displayName": "Seal Oxblood", "canonical": "#7a2318", "tonalRamp": ["#2a0c08", "#3d120c", "#511810", "#661e14", "#7a2318", "#a5341f", "#cc5a40", "#e59a86"] },
+      "rule": { "role": "neutral", "displayName": "Ledger Rule", "canonical": "#c3b596", "tonalRamp": ["#33301f", "#4e4a2f", "#6a6440", "#877f52", "#a49a6e", "#c3b596", "#d7ccb0", "#ece5d2"] },
+      "footer-ink": { "role": "neutral", "displayName": "Footer Ink", "canonical": "#d9ceb4", "tonalRamp": ["#33301f", "#4e4a30", "#6a6543", "#878057", "#a49c72", "#c1ba93", "#d9ceb4", "#ede7d4"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Page H1 and hero title; Caslon Display only." },
+      "headline": { "displayName": "Headline", "purpose": "Section H2 and pull-quotes." },
+      "title": { "displayName": "Title", "purpose": "H3 subsection heads, bold Caslon Text." },
+      "lead": { "displayName": "Lead", "purpose": "Opening paragraph under a masthead or hero." },
+      "body": { "displayName": "Body", "purpose": "Running prose, old-style figures, 68ch measure." },
+      "label": { "displayName": "Register Label", "purpose": "Archivo tracked uppercase; panel heads, meta, column labels." },
+      "register": { "displayName": "Register Figure", "purpose": "Archivo tabular lining figures for key/value readouts." }
+    },
+    "shadows": [
+      { "name": "shadow-lift", "value": "0 12px 30px -20px rgba(31,27,22,.5)", "purpose": "Object lift for register/form/portrait panels and the solid stamp button." },
+      { "name": "shadow-page", "value": "0 1px 0 #ede4d1, 0 18px 40px -28px rgba(31,27,22,.55)", "purpose": "Page lift under the mobile nav dropdown." },
+      { "name": "focus-ring", "value": "0 0 0 3px color-mix(in srgb, #244b3b 22%, transparent)", "purpose": "Input focus glow, paired with a green border." },
+      { "name": "rule-double", "value": "border-top: 1px solid #a99a78; box-shadow: 0 3px 0 -2px #a99a78", "purpose": "The book's double-hairline section-break divider." }
+    ],
+    "motion": [
+      { "name": "ease-stamp", "value": "cubic-bezier(.2,.7,.2,1)", "purpose": "Button press/lift and reveal easing." },
+      { "name": "reveal", "value": "opacity .7s, transform .7s (translateY(14px) -> 0)", "purpose": "One authored scroll-reveal moment via IntersectionObserver; disabled under prefers-reduced-motion." }
+    ],
+    "breakpoints": [
+      { "name": "entry-collapse", "value": "40rem" },
+      { "name": "footer-2col", "value": "46rem" },
+      { "name": "person-contact", "value": "52rem" },
+      { "name": "hero-stack", "value": "54rem" },
+      { "name": "nav-drawer", "value": "56rem" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button (Stamp)",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Solid green inked stamp for the primary action; deepens and lifts on hover.",
+      "html": "<a class=\"ds-btn\" href=\"#\">Kontakt aufnehmen <span class=\"ds-btn__arrow\" aria-hidden=\"true\">→</span></a>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; gap: .6rem; font-family: Archivo, \"Helvetica Neue\", Arial, sans-serif; font-weight: 600; font-size: .82rem; letter-spacing: .12em; text-transform: uppercase; color: #ede4d1; background: #244b3b; padding: .85rem 1.5rem; border: 1px solid #1a3a2d; border-radius: 1px; text-decoration: none; cursor: pointer; box-shadow: 0 12px 30px -20px rgba(31,27,22,.5); transition: transform .18s cubic-bezier(.2,.7,.2,1), box-shadow .18s, background .18s; } .ds-btn:hover { background: #1a3a2d; color: #ede4d1; transform: translateY(-1px); } .ds-btn:active { transform: translateY(0); } .ds-btn:focus-visible { outline: 2px solid #244b3b; outline-offset: 2px; } .ds-btn__arrow { font-weight: 700; }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Quiet secondary action; transparent with a strong-rule border that greens on hover.",
+      "html": "<a class=\"ds-btn-ghost\" href=\"#\">Investmentfokus prüfen</a>",
+      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; gap: .6rem; font-family: Archivo, \"Helvetica Neue\", Arial, sans-serif; font-weight: 600; font-size: .82rem; letter-spacing: .12em; text-transform: uppercase; color: #244b3b; background: transparent; padding: .85rem 1.5rem; border: 1px solid #a99a78; border-radius: 1px; text-decoration: none; cursor: pointer; transition: background .18s, border-color .18s; } .ds-btn-ghost:hover { background: color-mix(in srgb, #244b3b 8%, transparent); border-color: #244b3b; color: #244b3b; } .ds-btn-ghost:focus-visible { outline: 2px solid #244b3b; outline-offset: 2px; }"
+    },
+    {
+      "name": "Ledger Entry",
+      "kind": "custom",
+      "refersTo": "card-register",
+      "description": "The signature device: a numbered booking entry with a green-ruled folio index column beside a hairline-topped body.",
+      "html": "<div class=\"ds-entry\"><div class=\"ds-entry__no\">No. 01<small>Eröffnung</small></div><div class=\"ds-entry__body\"><h2 class=\"ds-entry__h\">Beteiligungskapital, das <em>bleibt</em>.</h2><p class=\"ds-entry__p\">Ein eingetragener Anteil in einem geführten Buch.</p></div></div>",
+      "css": ".ds-entry { display: grid; grid-template-columns: 5.5rem 1fr; column-gap: 2rem; align-items: start; } .ds-entry__no { font-family: Archivo, sans-serif; font-variant-numeric: tabular-nums lining-nums; font-weight: 600; font-size: .8rem; letter-spacing: .08em; color: #244b3b; padding-top: .55rem; border-top: 2px solid #244b3b; white-space: nowrap; } .ds-entry__no small { display: block; color: #5c5140; font-weight: 500; letter-spacing: .14em; margin-top: .35rem; } .ds-entry__body { padding-top: .3rem; border-top: 1px solid #c3b596; } .ds-entry__h { font-family: \"Caslon Display\", Georgia, serif; font-weight: 400; font-size: 2.4rem; line-height: 1.08; letter-spacing: -.02em; margin: 0; } .ds-entry__h em { font-style: italic; } .ds-entry__p { font-family: \"Caslon Text\", Georgia, serif; color: #4a4034; max-width: 60ch; }"
+    },
+    {
+      "name": "Register Panel",
+      "kind": "card",
+      "refersTo": "card-register",
+      "description": "Key/value figure readout with a tinted head and hairline-ruled rows; figures in the tabular register voice.",
+      "html": "<aside class=\"ds-register\"><div class=\"ds-register__head\"><span class=\"ds-label\">Beteiligungsrahmen</span><span class=\"ds-label\">Beispiel</span></div><div class=\"ds-register__rows\"><div class=\"ds-register__row\"><span class=\"ds-register__k\">Horizont</span><span class=\"ds-register__v\">10 Jahre<small> und länger</small></span></div><div class=\"ds-register__row\"><span class=\"ds-register__k\">Eigenkapital</span><span class=\"ds-register__v\">2–15<small> Mio. €</small></span></div></div></aside>",
+      "css": ".ds-register { background: #ede4d1; border: 1px solid #a99a78; border-radius: 1px; box-shadow: 0 12px 30px -20px rgba(31,27,22,.5); } .ds-register__head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; padding: .9rem 1.25rem; border-bottom: 2px solid #a99a78; background: #d9d9be; } .ds-label { font-family: Archivo, sans-serif; font-size: .78rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: #1a3a2d; } .ds-register__rows { padding: .35rem 1.25rem .5rem; } .ds-register__row { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; padding: .7rem 0; border-bottom: 1px solid #c3b596; } .ds-register__row:last-child { border-bottom: 0; } .ds-register__k { font-family: Archivo, sans-serif; font-size: .82rem; color: #4a4034; } .ds-register__v { font-family: Archivo, sans-serif; font-variant-numeric: tabular-nums lining-nums; font-weight: 600; font-size: 1.15rem; color: #1f1b16; } .ds-register__v small { font-weight: 500; font-size: .7rem; color: #5c5140; }"
+    },
+    {
+      "name": "Input Field",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Serif text on paper fill with a strong-rule border; focus shifts border green with a soft green glow.",
+      "html": "<div class=\"ds-field\"><label>E-Mail <span class=\"ds-req\">*</span></label><input type=\"email\" placeholder=\"name@firma.de\"></div>",
+      "css": ".ds-field { display: grid; gap: .4rem; } .ds-field > label { font-family: Archivo, sans-serif; font-size: .82rem; font-weight: 600; letter-spacing: .04em; color: #4a4034; } .ds-req { color: #7a2318; } .ds-field input { font-family: \"Caslon Text\", Georgia, serif; font-size: 1rem; color: #1f1b16; background: #e7ddc8; border: 1px solid #a99a78; border-radius: 1px; padding: .7rem .8rem; width: 100%; transition: border-color .15s, box-shadow .15s; } .ds-field input:focus { outline: none; border-color: #244b3b; box-shadow: 0 0 0 3px color-mix(in srgb, #244b3b 22%, transparent); } .ds-field input:user-invalid { border-color: #7a2318; }"
+    },
+    {
+      "name": "Primary Navigation",
+      "kind": "nav",
+      "refersTo": null,
+      "description": "Archivo nav links with a green underline marking the current page; sits in a translucent, blurred paper header.",
+      "html": "<nav class=\"ds-nav\"><a href=\"#\" aria-current=\"page\">Strategie</a><a href=\"#\">Investmentfokus</a><a href=\"#\">Person</a><a href=\"#\">Kontakt</a></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; gap: 2rem; background: color-mix(in srgb, #e7ddc8 88%, transparent); backdrop-filter: saturate(120%) blur(6px); padding: .6rem 1rem; } .ds-nav a { font-family: Archivo, sans-serif; font-weight: 500; font-size: .9rem; color: #4a4034; text-decoration: none; letter-spacing: .02em; padding: .35rem 0; border-bottom: 2px solid transparent; } .ds-nav a:hover { color: #1f1b16; } .ds-nav a[aria-current=\"page\"] { color: #1f1b16; border-bottom-color: #244b3b; }"
+    },
+    {
+      "name": "Demo Badge",
+      "kind": "chip",
+      "refersTo": null,
+      "description": "Oxblood-outlined placeholder stamp marking any fabricated figure or claim as an example.",
+      "html": "<span class=\"ds-demo-badge\">Beispiel</span>",
+      "css": ".ds-demo-badge { display: inline-block; font-family: Archivo, sans-serif; font-size: .72rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #7a2318; border: 1px solid #7a2318; border-radius: 1px; padding: .1rem .42rem; vertical-align: middle; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Bound Ledger",
+    "overview": "The site is a kept book, not a fund prospectus. Every surface behaves like a page in a commercial register: a warm manila working-paper ground carries faint horizontal booking lines behind all content, sections open as numbered entries (\"No. 01\") in their own folio gutter, figures sit in tabular columns, and a double hairline rules off each section break. The palette is restrained-to-committed: one warm paper ground, iron-gall near-black ink, and exactly one committed deep green that carries whole regions, with a reserved oxblood used only as a seal/marking color. Type is two-voiced: a Caslon serif with book gravity for entries, headings, and prose, and an Archivo sans with tabular figures and tracked uppercase for the register/label voice. Light mode only.",
+    "keyCharacteristics": [
+      "Warm manila ground (#e7ddc8) with a fixed repeating booking-line grid behind everything.",
+      "One committed green accent; oxblood strictly a seal/marking color.",
+      "Numbered ledger entries with a real folio index column, not decorative eyebrows.",
+      "Serif for gravity, tabular sans for the register/figure voice.",
+      "Near-square corners (1px), thin ruled borders, no rounded cards.",
+      "Light mode only."
+    ],
+    "rules": [
+      { "name": "The One Voice Rule", "body": "Green is the only accent that carries emphasis. If a surface needs to shout, it does it in green, never by introducing a second hue.", "section": "colors" },
+      { "name": "The Oxblood-Is-A-Seal Rule", "body": "Oxblood only marks: placeholder stamps, required fields, and errors. It never decorates, never fills a CTA, never becomes a second accent.", "section": "colors" },
+      { "name": "The Two-Voice Rule", "body": "Serif for anything that reads as sentences; Archivo (tabular, tracked, uppercase) for anything that counts, labels, or stamps. A number that matters is set in tabular figures.", "section": "typography" },
+      { "name": "The Old-Style-Prose Rule", "body": "Body prose uses old-style figures (onum); tabular lining figures (tnum lnum) are reserved for the register voice, so inline dates and columnar figures read differently on purpose.", "section": "typography" },
+      { "name": "The Paper-Flat Rule", "body": "Surfaces are flat and ruled by default. A shadow only appears to lift a discrete physical object off the sheet, never to decorate a flat text region.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep green as the single accent that carries emphasis and whole regions (footer, CTA bands, stamps).",
+      "Do set every figure that matters in the Archivo tabular register voice, and every folio/index number in green.",
+      "Do open sections as numbered ledger entries and rule them with the hairline / double-hairline vocabulary.",
+      "Do keep corners near-square (1px) and draw structure with thin ruled borders on paper.",
+      "Do mark every fabricated figure or claim with .demo-badge / .demo-note.",
+      "Do render the logo/monogram and portrait as inline SVG."
+    ],
+    "donts": [
+      "Don't introduce a second accent hue or use oxblood as anything but a seal/marking color.",
+      "Don't add a dark mode or a cream ground; the world is warm-manila, light-only.",
+      "Don't round corners into pill/card radii or drop shadows onto flat text regions.",
+      "Don't ship the navy-skyline/handshake PE hero or the cream-plus-italic editorial serif look; both are explicit anti-references.",
+      "Don't treat placeholder copy or example figures as product truth in future work."
+    ]
+  }
+}

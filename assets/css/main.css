@@ -190,9 +190,12 @@ small { font-size: var(--step-1); }
   .entry { grid-template-columns: 1fr; row-gap: .5rem; }
   .entry__body { border-top: 0; }
 }
-/* hero opening entry: keep the folio marker, drop the rule slicing the H1 */
+/* hero opening entry: keep the folio marker, drop the rule slicing the H1,
+   and use a slimmer gutter so the display H1 keeps its full measure */
+.entry--hero { grid-template-columns: 3.5rem 1fr; column-gap: clamp(1rem, 2vw, 1.75rem); }
 .entry--hero .entry__body { border-top: 0; padding-top: 0; }
 .entry--hero .entry__no { padding-top: .5rem; }
+.entry--hero .hero__title { hyphens: none; }
 
 /* ---- Monogram seal ------------------------------------------------- */
 .seal { display: inline-flex; align-items: center; gap: .7rem; }
