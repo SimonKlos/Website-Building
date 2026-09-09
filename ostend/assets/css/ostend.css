@@ -106,10 +106,11 @@ strong{ font-weight:700; }
 #start,.chapter{ scroll-margin-top:5rem; }
 
 /* matchday divider header (chapter opener) */
-.matchhead{ display:flex; align-items:center; gap:1rem; margin-bottom:1.5rem; }
-.matchhead .kicker{ white-space:nowrap; }
-.matchhead::after{ content:""; flex:1; height:2px; background:linear-gradient(90deg,var(--line-2),transparent); }
-.matchhead__fol{ font-family:var(--f-cond); font-weight:600; font-size:var(--s-1); letter-spacing:.12em; color:var(--ink-3); text-transform:uppercase; }
+/* segment divider: a rule with a right-aligned scoreboard "bug" — chrome, not
+   an eyebrow label above the heading */
+.matchhead{ display:flex; align-items:center; gap:1rem; margin-bottom:1.75rem; }
+.matchhead::before{ content:""; flex:1; height:2px; background:linear-gradient(90deg,transparent,var(--line-2)); }
+.matchhead__fol{ display:inline-flex; align-items:center; gap:.4rem; font-family:var(--f-cond); font-weight:700; font-size:.8rem; letter-spacing:.1em; color:#fff; background:var(--navy); text-transform:uppercase; padding:.28rem .65rem; border-radius:99px; font-variant-numeric:tabular-nums; white-space:nowrap; }
 
 /* ---- Wordmark ------------------------------------------------------ */
 .wordmark{ display:inline-flex; align-items:center; gap:.6rem; text-decoration:none; color:var(--ink); }
@@ -192,7 +193,7 @@ strong{ font-weight:700; }
 .ticker__track{ display:flex; gap:0; align-items:stretch; flex-wrap:wrap; }
 .ticker__item{ display:flex; align-items:center; gap:.5rem; padding:.7rem 1.1rem; border-right:1px solid var(--navy-2); font-family:var(--f-cond); font-weight:500; font-size:.9rem; letter-spacing:.03em; }
 .ticker__item b{ color:#fff; font-weight:700; }
-.ticker__tag{ color:var(--blue-bright); font-weight:700; letter-spacing:.1em; text-transform:uppercase; font-size:.75rem; }
+.ticker__tag{ color:#7fb0ff; font-weight:700; letter-spacing:.1em; text-transform:uppercase; font-size:.75rem; }
 
 /* ---- Hero ---------------------------------------------------------- */
 .hero{ position:relative; overflow:hidden; padding-top:clamp(2.5rem,5vw,4rem); padding-bottom:clamp(2.5rem,5vw,4rem); }

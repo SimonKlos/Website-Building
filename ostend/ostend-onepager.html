@@ -114,10 +114,11 @@ strong{ font-weight:700; }
 #start,.chapter{ scroll-margin-top:5rem; }
 
 /* matchday divider header (chapter opener) */
-.matchhead{ display:flex; align-items:center; gap:1rem; margin-bottom:1.5rem; }
-.matchhead .kicker{ white-space:nowrap; }
-.matchhead::after{ content:""; flex:1; height:2px; background:linear-gradient(90deg,var(--line-2),transparent); }
-.matchhead__fol{ font-family:var(--f-cond); font-weight:600; font-size:var(--s-1); letter-spacing:.12em; color:var(--ink-3); text-transform:uppercase; }
+/* segment divider: a rule with a right-aligned scoreboard "bug" — chrome, not
+   an eyebrow label above the heading */
+.matchhead{ display:flex; align-items:center; gap:1rem; margin-bottom:1.75rem; }
+.matchhead::before{ content:""; flex:1; height:2px; background:linear-gradient(90deg,transparent,var(--line-2)); }
+.matchhead__fol{ display:inline-flex; align-items:center; gap:.4rem; font-family:var(--f-cond); font-weight:700; font-size:.8rem; letter-spacing:.1em; color:#fff; background:var(--navy); text-transform:uppercase; padding:.28rem .65rem; border-radius:99px; font-variant-numeric:tabular-nums; white-space:nowrap; }
 
 /* ---- Wordmark ------------------------------------------------------ */
 .wordmark{ display:inline-flex; align-items:center; gap:.6rem; text-decoration:none; color:var(--ink); }
@@ -200,7 +201,7 @@ strong{ font-weight:700; }
 .ticker__track{ display:flex; gap:0; align-items:stretch; flex-wrap:wrap; }
 .ticker__item{ display:flex; align-items:center; gap:.5rem; padding:.7rem 1.1rem; border-right:1px solid var(--navy-2); font-family:var(--f-cond); font-weight:500; font-size:.9rem; letter-spacing:.03em; }
 .ticker__item b{ color:#fff; font-weight:700; }
-.ticker__tag{ color:var(--blue-bright); font-weight:700; letter-spacing:.1em; text-transform:uppercase; font-size:.75rem; }
+.ticker__tag{ color:#7fb0ff; font-weight:700; letter-spacing:.1em; text-transform:uppercase; font-size:.75rem; }
 
 /* ---- Hero ---------------------------------------------------------- */
 .hero{ position:relative; overflow:hidden; padding-top:clamp(2.5rem,5vw,4rem); padding-bottom:clamp(2.5rem,5vw,4rem); }
@@ -448,8 +449,7 @@ blockquote.pull cite{ display:block; margin-top:.9rem; font-family:var(--f-sans)
   <section id="strategie" class="chapter section">
     <div class="wrap">
       <div class="matchhead">
-        <span class="kicker">Segment 01 — Strategie</span>
-        <span class="matchhead__fol">Ostend</span>
+        <span class="matchhead__fol">01 · Strategie</span>
       </div>
       <h2 class="reveal" style="max-width:16ch">Wir spielen die lange Ballstafette.</h2>
       <p class="lead reveal" style="margin-top:1.25rem;max-width:60ch">Kein Fonds mit Ablaufdatum, sondern ein einzelner Unternehmer, der mit eigenem Kapital einsteigt — geduldig genug für echtes Wachstum, nah genug, um mitzuspielen statt nur zuzuschauen.</p>
@@ -467,8 +467,7 @@ blockquote.pull cite{ display:block; margin-top:.9rem; font-family:var(--f-sans)
   <section id="investmentfokus" class="chapter section">
     <div class="wrap">
       <div class="matchhead">
-        <span class="kicker">Segment 02 — Investmentfokus</span>
-        <span class="matchhead__fol">Ostend</span>
+        <span class="matchhead__fol">02 · Investmentfokus</span>
       </div>
       <h2 class="reveal" style="max-width:16ch">Wohin der Ball läuft.</h2>
       <p class="lead reveal" style="margin-top:1.25rem;max-width:62ch">Wir sind früh dabei und bleiben fokussiert. Wichtiger als eine harte Kennzahl-Checkliste ist die Passung: Team, Traktion und Nähe zu Sport, Fußball und Medien.</p>
@@ -507,8 +506,7 @@ blockquote.pull cite{ display:block; margin-top:.9rem; font-family:var(--f-sans)
   <section id="portfolio" class="chapter section">
     <div class="wrap">
       <div class="matchhead">
-        <span class="kicker">Segment 03 — Portfolio</span>
-        <span class="matchhead__fol">Aufstellung · <span class="formation num">4-3-3</span></span>
+        <span class="matchhead__fol">03 · Aufstellung <span class="formation num">4-3-3</span></span>
       </div>
       <h2 class="reveal" style="max-width:18ch">Die aktuelle Aufstellung.</h2>
       <p class="lead reveal" style="margin-top:1.25rem;max-width:60ch">Drei Beteiligungen als Ausschnitt der Startelf. <span class="demo-badge">Demo</span> Firmen, Zahlen und Stationen sind Platzhalter.</p>
@@ -571,8 +569,7 @@ blockquote.pull cite{ display:block; margin-top:.9rem; font-family:var(--f-sans)
   <section id="person" class="chapter section">
     <div class="wrap">
       <div class="matchhead">
-        <span class="kicker">Segment 04 — Person</span>
-        <span class="matchhead__fol">Ostend</span>
+        <span class="matchhead__fol">04 · Person</span>
       </div>
       <div class="person">
         <figure class="mgr-card reveal" style="margin:0">
@@ -617,8 +614,7 @@ blockquote.pull cite{ display:block; margin-top:.9rem; font-family:var(--f-sans)
   <section id="kontakt" class="chapter section">
     <div class="wrap">
       <div class="matchhead">
-        <span class="kicker">Segment 05 — Kontakt</span>
-        <span class="matchhead__fol">Anpfiff</span>
+        <span class="matchhead__fol">05 · Kontakt</span>
       </div>
       <h2 class="reveal" style="max-width:16ch">Spielen wir zusammen?</h2>
       <p class="lead reveal" style="margin-top:1.25rem;max-width:60ch">Ob Pitch, konkrete Runde oder erstes Kennenlernen — schildern Sie uns kurz Ihr Vorhaben. Wir antworten persönlich.</p>
@@ -722,7 +718,7 @@ blockquote.pull cite{ display:block; margin-top:.9rem; font-family:var(--f-sans)
   <!-- ============ IMPRESSUM ============ -->
   <section id="impressum" class="chapter section wrap--narrow" style="margin-inline:auto">
     <div class="wrap">
-      <div class="matchhead"><span class="kicker">Impressum</span><span class="matchhead__fol">Platzhalter</span></div>
+      <div class="matchhead"><span class="matchhead__fol">Platzhalter</span></div>
       <h2>Impressum</h2>
       <p class="lead" style="margin-top:1rem">Angaben gemäß § 5 DDG. <span class="demo-badge">Demo</span> Platzhalterseite — verbindliche Angaben trägt der Betreiber vor Veröffentlichung ein.</p>
       <div class="stack" style="margin-top:1.25rem">
@@ -738,7 +734,7 @@ blockquote.pull cite{ display:block; margin-top:.9rem; font-family:var(--f-sans)
   <!-- ============ DATENSCHUTZ ============ -->
   <section id="datenschutz" class="chapter section">
     <div class="wrap wrap--narrow" style="padding-inline:0">
-      <div class="matchhead"><span class="kicker">Datenschutz</span><span class="matchhead__fol">Platzhalter</span></div>
+      <div class="matchhead"><span class="matchhead__fol">Platzhalter</span></div>
       <h2>Datenschutzerklärung</h2>
       <p class="lead" style="margin-top:1rem">Information nach DSGVO. <span class="demo-badge">Demo</span> Platzhalterseite; verbindliche Fassung stellt der Betreiber bereit.</p>
       <div class="stack-lg" style="margin-top:1.25rem">
