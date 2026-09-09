@@ -20,6 +20,24 @@
         ],
         "createdAt": "2026-09-08T15:15:15.914Z",
         "reason": "Direction OWN-WORLD (Kontorbuch): tracked uppercase running head/register labels ('HAUPTBUCH DER BETEILIGUNGEN') are the deliberate label voice, reviewer-validated; detector misclassifies the longer uppercase label as body text."
+      },
+      {
+        "rule": "wide-tracking",
+        "value": "*",
+        "files": [
+          "mainkontor-onepager.html"
+        ],
+        "createdAt": "2026-09-09T11:21:45.831Z",
+        "reason": "Kontorbuch OWN-WORLD: tracked uppercase running head/register labels; reviewer-validated in v1."
+      },
+      {
+        "rule": "repeating-stripes-gradient",
+        "value": "*",
+        "files": [
+          "mainkontor-onepager.html"
+        ],
+        "createdAt": "2026-09-09T11:21:45.845Z",
+        "reason": "Direction motif: ledger booking lines, not decorative stripes (as v1)."
       }
     ]
   }

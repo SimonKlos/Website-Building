@@ -10,7 +10,16 @@ konkreten Kunden ersetzt.
 > Branchen- und Kontaktangaben sind Beispielwerte und als solche gekennzeichnet (Badges „Demo" /
 > „Platzhalter"). Impressum und Datenschutz sind unverbindliche Vorlagen.
 
-## Struktur
+## Zwei Fassungen
+
+- **v1 — Mehrseitig:** `index.html` + Unterseiten, gemeinsame `assets/`. Klassische Website.
+- **v2 — One-Pager (eine Datei):** `mainkontor-onepager.html` — die komplette Website als **eine
+  einzige, in sich geschlossene Datei** (CSS, JS und Schriften inline eingebettet). Zum Durchscrollen,
+  mit festem Register-Menü oben, das per Anker direkt zu den Kapiteln springt (Scroll-Spy hebt das
+  aktive Kapitel hervor). Funktioniert ohne den `assets/`-Ordner — eine Datei zum Verschicken/Öffnen.
+  Gleiche Inhalte und Funktionen wie v1 (inkl. Webhook-Kontaktformular).
+
+## Struktur (v1)
 
 ```
 index.html            Start (Hero als erster Buchungseintrag + Kennzahlen-Register)
@@ -39,7 +48,9 @@ python3 -m http.server 8000
 
 ## Kontaktformular an einen Workflow/Agenten anbinden
 
-In `assets/js/config.js` die `contactEndpoint`-URL setzen:
+**v1:** in `assets/js/config.js` die `contactEndpoint`-URL setzen.
+**v2 (One-Pager):** im inline-`<script>` von `mainkontor-onepager.html` nach `contactEndpoint` suchen
+und dort die URL eintragen (gleiches `window.MAINKONTOR`-Objekt).
 
 ```js
 window.MAINKONTOR = { contactEndpoint: "https://<ihr-webhook>/kontakt", source: "mainkontor-website" };
