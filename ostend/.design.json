@@ -1,0 +1,160 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-09T00:00:00Z",
+  "title": "Design System: Ostend Beteiligungen",
+  "extensions": {
+    "colorMeta": {
+      "pitch-blue": { "role": "primary", "displayName": "Pitch Blue", "canonical": "#1256d6", "tonalRamp": ["#06122e", "#0a2251", "#0b3a9c", "#1256d6", "#2f7bff", "#66a0ff", "#a7c6ff", "#e3ecfa"] },
+      "pitch-blue-deep": { "role": "primary", "displayName": "Pitch Blue Deep", "canonical": "#0b3a9c" },
+      "pitch-blue-bright": { "role": "primary", "displayName": "Pitch Blue Bright", "canonical": "#2f7bff" },
+      "ink": { "role": "neutral", "displayName": "Deep Navy Ink", "canonical": "#0e1a2b", "tonalRamp": ["#0e1a2b", "#17273c", "#26374f", "#38465b", "#566579", "#8798ae", "#b3c5e2", "#eef3fb"] },
+      "ground": { "role": "neutral", "displayName": "Cool Paper Ground", "canonical": "#eef3fb", "tonalRamp": ["#0e1a2b", "#26374f", "#566579", "#8798ae", "#b3c5e2", "#ccd9ee", "#e3ecfa", "#eef3fb"] },
+      "surface": { "role": "neutral", "displayName": "Card White", "canonical": "#ffffff" },
+      "panel-tint": { "role": "neutral", "displayName": "Panel Tint", "canonical": "#e3ecfa" },
+      "ink-secondary": { "role": "neutral", "displayName": "Tinted Secondary Ink", "canonical": "#38465b" },
+      "ink-tertiary": { "role": "neutral", "displayName": "Tertiary Ink", "canonical": "#566579" },
+      "line": { "role": "neutral", "displayName": "Line", "canonical": "#ccd9ee" },
+      "line-strong": { "role": "neutral", "displayName": "Line Strong", "canonical": "#b3c5e2" },
+      "navy": { "role": "neutral", "displayName": "Navy Surface", "canonical": "#0e1a2b" },
+      "navy-2": { "role": "neutral", "displayName": "Navy Divider", "canonical": "#17273c" },
+      "chip": { "role": "neutral", "displayName": "Chip Fill", "canonical": "#d8e5fb" },
+      "live-dot": { "role": "tertiary", "displayName": "Live Green", "canonical": "#18c26a" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero headline only." },
+      "headline": { "displayName": "Headline", "purpose": "Section H2 openers." },
+      "title": { "displayName": "Title", "purpose": "H3s, pull quote, sub-headings." },
+      "body": { "displayName": "Body", "purpose": "Running copy, 44-66ch." },
+      "label": { "displayName": "Label / Kicker", "purpose": "In-tile/in-form uppercase micro-labels, nav, buttons. Never a standalone section eyebrow." },
+      "figure": { "displayName": "Figure", "purpose": "All numbers, tabular lining figures via .num." }
+    },
+    "shadows": [
+      { "name": "card-rest", "value": "0 6px 16px -10px rgba(14,26,43,.30)", "purpose": "Default diffuse lift under cards, tiles, buttons, the bug, lineup cards." },
+      { "name": "panel-deep", "value": "0 14px 34px -20px rgba(14,26,43,.35)", "purpose": "Deeper lift for the largest surfaces (form, manager card) and mobile nav." },
+      { "name": "focus-ring", "value": "0 0 0 3px color-mix(in srgb, #1256d6 22%, transparent)", "purpose": "Blue halo on focused inputs, paired with a solid blue border." },
+      { "name": "live-halo", "value": "0 0 0 3px color-mix(in srgb, #18c26a 30%, transparent)", "purpose": "Green ring around the scoreboard live dot." }
+    ],
+    "motion": [
+      { "name": "ease-out-soft", "value": "cubic-bezier(0.2, 0.7, 0.2, 1)", "purpose": "Button lift and reveal transitions." },
+      { "name": "button-lift", "value": "transform .16s, background .16s, box-shadow .16s", "purpose": "Primary button hover raises translateY(-1px)." },
+      { "name": "reveal", "value": "opacity .6s, transform .6s (translateY 14px -> 0)", "purpose": "Scroll-in reveal; disabled under prefers-reduced-motion." }
+    ],
+    "breakpoints": [
+      { "name": "lineup-stack", "value": "52rem" },
+      { "name": "hero-stack", "value": "54rem" },
+      { "name": "nav-mobile", "value": "56rem" },
+      { "name": "footer-2col", "value": "46rem" },
+      { "name": "footer-1col", "value": "30rem" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Condensed uppercase CTA in pitch-blue; lifts 1px on hover, deepens on press.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">Pitch senden <span aria-hidden=\"true\">→</span></a>",
+      "css": ".ds-btn-primary { display:inline-flex; align-items:center; gap:.55rem; font-family:'Barlow Semi Condensed',sans-serif; font-weight:600; font-size:.92rem; letter-spacing:.04em; text-transform:uppercase; color:#fff; background:#1256d6; border:1px solid #0b3a9c; padding:.8rem 1.4rem; border-radius:4px; text-decoration:none; cursor:pointer; box-shadow:0 6px 16px -10px rgba(14,26,43,.30); transition:transform .16s cubic-bezier(.2,.7,.2,1),background .16s,box-shadow .16s; } .ds-btn-primary:hover { background:#0b3a9c; transform:translateY(-1px); } .ds-btn-primary:active { transform:translateY(0); } .ds-btn-primary:focus-visible { outline:2px solid #1256d6; outline-offset:2px; }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Blue-on-transparent secondary action with a cornflower border.",
+      "html": "<a class=\"ds-btn-ghost\" href=\"#\">Portfolio ansehen</a>",
+      "css": ".ds-btn-ghost { display:inline-flex; align-items:center; gap:.55rem; font-family:'Barlow Semi Condensed',sans-serif; font-weight:600; font-size:.92rem; letter-spacing:.04em; text-transform:uppercase; color:#1256d6; background:transparent; border:1px solid #b3c5e2; padding:.8rem 1.4rem; border-radius:4px; text-decoration:none; cursor:pointer; transition:background .16s,color .16s,border-color .16s; } .ds-btn-ghost:hover { background:color-mix(in srgb,#1256d6 8%,transparent); color:#0b3a9c; border-color:#1256d6; }"
+    },
+    {
+      "name": "Fact Chip",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Static pill fact (phase, sector, region) with an optional leading blue dot.",
+      "html": "<span class=\"ds-chip\"><span class=\"ds-chip__dot\"></span>Business Angel &amp; Growth</span>",
+      "css": ".ds-chip { display:inline-flex; align-items:center; gap:.45rem; background:#d8e5fb; color:#0b3a9c; border:1px solid color-mix(in srgb,#1256d6 22%,transparent); border-radius:999px; padding:.4rem .85rem; font-family:'Barlow Semi Condensed',sans-serif; font-weight:600; font-size:.85rem; letter-spacing:.02em; text-decoration:none; } .ds-chip__dot { width:.5rem; height:.5rem; border-radius:50%; background:#1256d6; }"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Recessed cool-ground input with uppercase condensed label; blue border + halo on focus.",
+      "html": "<div class=\"ds-field\"><label for=\"ds-f-email\">E-Mail <span class=\"ds-req\">*</span></label><input id=\"ds-f-email\" type=\"email\" placeholder=\"\"></div>",
+      "css": ".ds-field { display:grid; gap:.35rem; } .ds-field > label { font-family:'Barlow Semi Condensed',sans-serif; font-weight:600; font-size:.9rem; letter-spacing:.02em; color:#38465b; text-transform:uppercase; } .ds-req { color:#1256d6; } .ds-field input { font-family:'Barlow',sans-serif; font-size:1rem; color:#0e1a2b; background:#eef3fb; border:1px solid #b3c5e2; border-radius:4px; padding:.7rem .8rem; width:100%; transition:border-color .15s,box-shadow .15s; } .ds-field input:focus { outline:none; border-color:#1256d6; box-shadow:0 0 0 3px color-mix(in srgb,#1256d6 22%,transparent); }"
+    },
+    {
+      "name": "Scoreboard Bug",
+      "kind": "custom",
+      "refersTo": "scoreboard-bug",
+      "description": "Two-cell broadcast bug: navy label cell (optional live dot) + white tabular value cell. Punctual accent only.",
+      "html": "<span class=\"ds-bug\"><span class=\"ds-bug__side\"><span class=\"ds-bug__live\"></span>OSTEND</span><span class=\"ds-bug__val\"><span class=\"ds-num\">SAISON ’19—</span></span></span>",
+      "css": ".ds-bug { display:inline-flex; align-items:stretch; border-radius:4px; overflow:hidden; font-family:'Barlow Semi Condensed',sans-serif; box-shadow:0 6px 16px -10px rgba(14,26,43,.30); border:1px solid #0e1a2b; } .ds-bug__side { background:#0e1a2b; color:#fff; display:flex; align-items:center; gap:.5rem; padding:.5rem .8rem; font-weight:700; letter-spacing:.04em; } .ds-bug__live { width:.55rem; height:.55rem; border-radius:50%; background:#18c26a; box-shadow:0 0 0 3px color-mix(in srgb,#18c26a 30%,transparent); } .ds-bug__val { background:#fff; color:#0e1a2b; display:flex; align-items:center; padding:.5rem .8rem; font-weight:700; } .ds-num { font-variant-numeric:tabular-nums lining-nums; font-size:1.05rem; }"
+    },
+    {
+      "name": "Segment Divider",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Section opener: a fading hairline rule terminated by a right-aligned navy pill carrying the numbered segment label. Section chrome, NOT an eyebrow.",
+      "html": "<div class=\"ds-matchhead\"><span class=\"ds-matchhead__fol\">03 · Aufstellung <span class=\"ds-num\">4-3-3</span></span></div>",
+      "css": ".ds-matchhead { display:flex; align-items:center; gap:1rem; margin-bottom:1.75rem; } .ds-matchhead::before { content:\"\"; flex:1; height:2px; background:linear-gradient(90deg,transparent,#b3c5e2); } .ds-matchhead__fol { display:inline-flex; align-items:center; gap:.4rem; font-family:'Barlow Semi Condensed',sans-serif; font-weight:700; font-size:.8rem; letter-spacing:.1em; color:#fff; background:#0e1a2b; text-transform:uppercase; padding:.28rem .65rem; border-radius:99px; font-variant-numeric:tabular-nums; white-space:nowrap; } .ds-num { font-variant-numeric:tabular-nums lining-nums; }"
+    },
+    {
+      "name": "KPI Tile + Meter",
+      "kind": "card",
+      "refersTo": "kpi-tile",
+      "description": "Analytics tile: uppercase label, large tabular value, note, and a blue-gradient pill meter.",
+      "html": "<div class=\"ds-kpi\"><span class=\"ds-kpi__label\">Ticket</span><div class=\"ds-kpi__val ds-num\">€ 1,5<span class=\"ds-unit\">Mio.</span></div><div class=\"ds-kpi__note\">ggf. mehr mit Ko-Investoren</div><div class=\"ds-meter\"><span class=\"ds-meter__fill\" style=\"width:62%\"></span></div></div>",
+      "css": ".ds-kpi { background:#fff; border:1px solid #ccd9ee; border-radius:4px; padding:1.25rem 1.25rem 1.1rem; box-shadow:0 6px 16px -10px rgba(14,26,43,.30); font-family:'Barlow Semi Condensed',sans-serif; } .ds-kpi__label { font-weight:600; font-size:.78rem; letter-spacing:.1em; text-transform:uppercase; color:#566579; } .ds-kpi__val { font-weight:700; font-size:2rem; line-height:1.05; margin-top:.35rem; color:#0e1a2b; font-variant-numeric:tabular-nums lining-nums; } .ds-unit { font-size:.9rem; color:#566579; font-weight:600; margin-left:.3rem; } .ds-kpi__note { font-family:'Barlow',sans-serif; font-size:.78rem; color:#38465b; margin-top:.45rem; } .ds-meter { height:.5rem; border-radius:99px; background:#e3ecfa; margin-top:.8rem; overflow:hidden; border:1px solid #ccd9ee; } .ds-meter__fill { display:block; height:100%; background:linear-gradient(90deg,#1256d6,#2f7bff); }"
+    },
+    {
+      "name": "Lineup Player Card",
+      "kind": "card",
+      "refersTo": null,
+      "description": "Portfolio 'Aufstellung' card: blue-gradient top with giant jersey number + position pill, white body with description and a 3-up stat line.",
+      "html": "<article class=\"ds-player\"><div class=\"ds-player__top\"><span class=\"ds-player__pos\">Sturm · Fan-Engagement</span><div class=\"ds-player__no ds-num\">9</div><div class=\"ds-player__name\">MatchdayOS</div><div class=\"ds-player__meta\">Einstieg ’21 · Lead-Angel</div></div><div class=\"ds-player__body\"><p>Fan-Engagement- und Matchday-App für Vereine.</p><div class=\"ds-statline\"><div class=\"ds-stat\"><div class=\"ds-stat__v ds-num\">1.200</div><div class=\"ds-stat__k\">Vereine</div></div><div class=\"ds-stat\"><div class=\"ds-stat__v ds-num\">85k</div><div class=\"ds-stat__k\">MAU</div></div><div class=\"ds-stat\"><div class=\"ds-stat__v\">Seed</div><div class=\"ds-stat__k\">Runde</div></div></div></div></article>",
+      "css": ".ds-player { position:relative; background:#fff; border:1px solid #ccd9ee; border-radius:4px; box-shadow:0 6px 16px -10px rgba(14,26,43,.30); overflow:hidden; font-family:'Barlow Semi Condensed',sans-serif; max-width:22rem; } .ds-player__top { position:relative; background:linear-gradient(160deg,#1256d6,#0b3a9c); color:#fff; padding:1.1rem 1.25rem 1rem; } .ds-player__no { font-weight:700; font-size:3.4rem; line-height:.9; letter-spacing:-.02em; font-variant-numeric:tabular-nums; } .ds-player__pos { position:absolute; top:1.1rem; right:1.25rem; font-weight:600; font-size:.78rem; letter-spacing:.14em; text-transform:uppercase; background:rgba(255,255,255,.16); padding:.3rem .6rem; border-radius:99px; } .ds-player__name { font-weight:700; font-size:1.5rem; margin-top:.4rem; } .ds-player__meta { font-size:.85rem; color:#cfe0ff; font-weight:500; } .ds-player__body { padding:1.1rem 1.25rem 1.25rem; } .ds-player__body p { font-family:'Barlow',sans-serif; font-size:.95rem; color:#38465b; margin:0 0 .9rem; } .ds-statline { display:grid; grid-template-columns:1fr 1fr 1fr; gap:.5rem; border-top:1px solid #ccd9ee; padding-top:.9rem; } .ds-stat { text-align:center; } .ds-stat__v { font-weight:700; font-size:1.15rem; color:#0b3a9c; font-variant-numeric:tabular-nums; } .ds-stat__k { font-weight:600; font-size:.74rem; letter-spacing:.08em; text-transform:uppercase; color:#566579; margin-top:.15rem; }"
+    },
+    {
+      "name": "Scroll-Spy Nav Link",
+      "kind": "nav",
+      "refersTo": null,
+      "description": "Condensed uppercase nav link; active page gets deep-blue text and a blue underline.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-a\" href=\"#\">Strategie</a><a class=\"ds-nav-a\" href=\"#\" aria-current=\"page\">Portfolio</a><a class=\"ds-nav-a\" href=\"#\">Kontakt</a></nav>",
+      "css": ".ds-nav { display:flex; align-items:center; gap:1.5rem; } .ds-nav-a { font-family:'Barlow Semi Condensed',sans-serif; font-weight:600; font-size:1rem; letter-spacing:.02em; color:#38465b; text-decoration:none; padding:.3rem 0; border-bottom:2px solid transparent; text-transform:uppercase; } .ds-nav-a:hover { color:#0e1a2b; } .ds-nav-a[aria-current=\"page\"] { color:#0b3a9c; border-bottom-color:#1256d6; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Tactic Board & the Analytics Desk",
+    "overview": "Ostend reads teams the way a coach reads the tactic board: analysis first, emotion punctual. The system is a calm, cool, light-mode dashboard built over a faint blueprint of a football pitch. Deep navy ink sits on a cool paper ground; white cards float on thin cornflower borders and soft, low shadows. A single committed pitch-blue carries whole regions so the eye always knows where the play is going. Broadcast energy (the dark navy scoreboard bug, the tiny green live dot, the ticker strip) appears only as an accent; it never becomes the room. It is deliberately not the loud sport-hype hero, and deliberately not the generic VC portfolio grid — it rejects both, and is emphatically not the warm ledger world of the sibling Mainkontor site. The world is light only.",
+    "keyCharacteristics": [
+      "Cool paper ground (#eef3fb) with floating white cards and thin cornflower borders.",
+      "One committed pitch-blue (#1256d6) that carries entire regions, not just tap targets.",
+      "Condensed Barlow Semi Condensed headlines over Barlow body with tabular figures.",
+      "Punctual broadcast accents: navy scoreboard bug, sparse green live dot.",
+      "Blueprint tactic geometry (pitch lines, formation dots) as low-opacity structure.",
+      "Gently rounded 4px corners; pill radius reserved for chips, tags, and the bug."
+    ],
+    "rules": [
+      { "name": "The One Committed Blue Rule", "body": "There is exactly one accent hue. Pitch-blue (#1256d6) and its deep/bright siblings are the only chromatic voice; no second accent color is ever introduced. The blue may flood whole regions — the discipline is hue, not quantity.", "section": "colors" },
+      { "name": "The Punctual Broadcast Rule", "body": "Navy scoreboard/ticker surfaces and the green live dot are accents, never structure. If broadcast chrome starts to organize a section rather than punctuate it, the tactic-board calm has been lost.", "section": "colors" },
+      { "name": "The Tabular Figure Rule", "body": "Every displayed number uses tabular lining numerals (font-variant-numeric: tabular-nums lining-nums). Figures are data, and data columns align.", "section": "typography" },
+      { "name": "The Label-Not-Eyebrow Rule", "body": "The uppercase condensed micro-label (.kicker) is an in-context field/tile label, never a standalone eyebrow floated above a section heading. Section openers use the numbered scoreboard-bug pill instead.", "section": "typography" },
+      { "name": "The Quiet Lift Rule", "body": "Cards rest on diffuse, negative-spread navy shadows plus a hairline border — never a hard offset block shadow. Depth whispers; the pitch blue does the shouting.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep pitch-blue (#1256d6) as the only accent hue; let it carry whole regions (button, meter, numerals, gradient tops).",
+      "Do set every displayed number in tabular lining figures (.num).",
+      "Do open each section with the numbered scoreboard-bug segment divider, right-aligned on a fading rule.",
+      "Do float white 4px cards on the cool ground with a hairline border and the soft Card Rest / Panel Deep shadows.",
+      "Do keep broadcast chrome (navy bug, green live dot, ticker) punctual — one or two touches per screen.",
+      "Do pair condensed Barlow Semi Condensed headings/labels with Barlow body; no third typeface.",
+      "Do downplay hard financial criteria: phase/ticket/sector read as chips and calm tiles, never as loud EBITDA cards."
+    ],
+    "donts": [
+      "Don't introduce a second accent color, or let green appear as anything but the live dot.",
+      "Don't use hard offset/block shadows or heavy borders — depth stays diffuse and quiet.",
+      "Don't float a standalone uppercase kicker/eyebrow above a heading; the segment-divider bug is the section marker.",
+      "Don't ship a dark theme; this world is light-only (color-scheme: light).",
+      "Don't let the sport/broadcast metaphor turn loud or reißerisch — the tactic-board calm and trust-first tone win.",
+      "Don't use red for anything but form validation."
+    ]
+  }
+}
