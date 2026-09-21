@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-21T00:00:00Z",
+  "title": "Design System: EastEnd46",
+  "extensions": {
+    "colorMeta": {
+      "accent": { "role": "primary", "displayName": "Institutional Blue", "canonical": "#1c4fd1", "tonalRamp": ["#0a1d54", "#0f2a78", "#123a97", "#1c4fd1", "#2a63e6", "#5b8bf0", "#a8c3f7", "#e7eefc"] },
+      "accent-deep": { "role": "primary", "displayName": "Institutional Blue Deep", "canonical": "#123a97", "tonalRamp": ["#08194a", "#0d2a70", "#123a97", "#1c4fd1", "#3f74e8", "#7ba2f2", "#b9d0f9", "#e7eefc"] },
+      "gold": { "role": "secondary", "displayName": "Warm Brass", "canonical": "#a9863f", "tonalRamp": ["#3a2e12", "#5c4a1f", "#7e662c", "#a9863f", "#c1a262", "#d6bd8c", "#e8d8ba", "#f4ecdd"] },
+      "bg": { "role": "neutral", "displayName": "Cool Ground", "canonical": "#f5f8fc", "tonalRamp": ["#0c1626", "#1c2c46", "#334565", "#5a6880", "#8593ab", "#b3c0d6", "#dde5f0", "#f5f8fc"] },
+      "ink": { "role": "neutral", "displayName": "Deep Navy Ink", "canonical": "#0f1b2e", "tonalRamp": ["#0c1626", "#0f1b2e", "#26344c", "#43516a", "#5a6880", "#97a3ba", "#c6d2e4", "#f5f8fc"] },
+      "navy": { "role": "neutral", "displayName": "Dark Navy", "canonical": "#0c1626", "tonalRamp": ["#060b14", "#0c1626", "#16233a", "#26344c", "#43516a", "#7a89a3", "#b6c2d8", "#eef3fa"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "The single hero <h1> positioning line, white over the scrim." },
+      "headline": { "displayName": "Headline", "purpose": "Section <h2> titles." },
+      "title": { "displayName": "Title", "purpose": "Service and section <h3>." },
+      "lead": { "displayName": "Lead", "purpose": "Section intro paragraphs and hero subline (ink-2)." },
+      "body": { "displayName": "Body", "purpose": "Default running text, capped near 66ch." },
+      "label": { "displayName": "Label", "purpose": "Small uppercase meta labels: form-header tags, coordinate labels, fact keys, footer heads." }
+    },
+    "shadows": [
+      { "name": "structural", "value": "0 18px 44px -26px rgba(15,27,46,.34)", "purpose": "Most-lifted surfaces: contact form, mobile nav drawer." },
+      { "name": "structural-sm", "value": "0 8px 22px -14px rgba(15,27,46,.28)", "purpose": "Service cards at rest — a quiet lift off the ground." },
+      { "name": "focus-ring", "value": "0 0 0 3px color-mix(in srgb, #1c4fd1 20%, transparent)", "purpose": "Input focus halo, paired with a solid accent border." }
+    ],
+    "motion": [
+      { "name": "ease-standard", "value": "cubic-bezier(0.2, 0.7, 0.2, 1)", "purpose": "Button lift and reveal transitions." },
+      { "name": "reveal", "value": "opacity .6s, transform .6s (translateY 14px→0)", "purpose": "On-scroll section reveal; disabled under prefers-reduced-motion." }
+    ],
+    "breakpoints": [
+      { "name": "content", "value": "48rem" },
+      { "name": "stack", "value": "52rem" },
+      { "name": "nav", "value": "56rem" },
+      { "name": "grid-collapse", "value": "46rem" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Primary CTA — white on institutional blue with a lift on hover.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">Kontakt aufnehmen <span aria-hidden=\"true\">&rarr;</span></a>",
+      "css": ".ds-btn-primary { display:inline-flex; align-items:center; gap:.55rem; font-family:'Libre Franklin',system-ui,sans-serif; font-weight:600; font-size:.95rem; color:#fff; background:#1c4fd1; border:1px solid #123a97; padding:.8rem 1.5rem; border-radius:3px; text-decoration:none; cursor:pointer; transition:transform .16s cubic-bezier(.2,.7,.2,1), background .16s; } .ds-btn-primary:hover { background:#123a97; transform:translateY(-1px); } .ds-btn-primary:active { transform:translateY(0); } .ds-btn-primary:focus-visible { outline:2px solid #1c4fd1; outline-offset:2px; }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Secondary action — accent text, hairline border, soft fill on hover.",
+      "html": "<a class=\"ds-btn-ghost\" href=\"#\">Leistungen ansehen</a>",
+      "css": ".ds-btn-ghost { display:inline-flex; align-items:center; gap:.55rem; font-family:'Libre Franklin',system-ui,sans-serif; font-weight:600; font-size:.95rem; color:#1c4fd1; background:transparent; border:1px solid #c6d2e4; padding:.8rem 1.5rem; border-radius:3px; text-decoration:none; cursor:pointer; transition:background .16s; } .ds-btn-ghost:hover { background:#e7eefc; color:#123a97; border-color:#1c4fd1; }"
+    },
+    {
+      "name": "Service Card",
+      "kind": "card",
+      "refersTo": "card-service",
+      "description": "One of the two Leistungen tiles; brass variant marks Beteiligung.",
+      "html": "<article class=\"ds-service\"><span class=\"ds-service__ic\" aria-hidden=\"true\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M15.5 8.5 13 13l-4.5 2.5L11 11z\"/></svg></span><h3 class=\"ds-service__h\">Beratung</h3><p class=\"ds-service__p\">Strategische und transaktionsnahe Beratung fuer Unternehmen.</p><ul class=\"ds-service__list\"><li>Strategie &amp; Unternehmensentwicklung</li><li>Finanzierung &amp; Kapitalstruktur</li></ul></article>",
+      "css": ".ds-service { position:relative; background:#fff; border:1px solid #dde5f0; border-radius:3px; padding:2rem 1.9rem 1.9rem; box-shadow:0 8px 22px -14px rgba(15,27,46,.28); font-family:'Libre Franklin',system-ui,sans-serif; color:#0f1b2e; } .ds-service__ic { width:2.6rem; height:2.6rem; border-radius:3px; display:grid; place-items:center; background:#e7eefc; color:#123a97; margin-bottom:1.1rem; } .ds-service__ic svg { width:1.35rem; height:1.35rem; } .ds-service__h { margin:0; font-weight:700; font-size:clamp(1.5rem,1.28rem + 1.05vw,2.05rem); letter-spacing:-.015em; line-height:1.1; } .ds-service__p { color:#43516a; margin:.7rem 0 0; line-height:1.62; } .ds-service__list { list-style:none; margin:1.2rem 0 0; padding:0; display:grid; gap:.7rem; } .ds-service__list li { position:relative; padding-left:1.4rem; color:#43516a; font-size:.98rem; } .ds-service__list li::before { content:''; position:absolute; left:0; top:.55em; width:.5rem; height:.5rem; border-radius:1px; background:#1c4fd1; transform:rotate(45deg); }"
+    },
+    {
+      "name": "Input Field",
+      "kind": "input",
+      "refersTo": "input-field",
+      "description": "Ruled text field with tinted ground and a soft blue focus halo.",
+      "html": "<div class=\"ds-field\"><label for=\"ds-name\">Name <span class=\"ds-req\">*</span></label><input id=\"ds-name\" type=\"text\" placeholder=\"\"></div>",
+      "css": ".ds-field { display:grid; gap:.35rem; font-family:'Libre Franklin',system-ui,sans-serif; } .ds-field > label { font-weight:600; font-size:.9rem; color:#43516a; } .ds-req { color:#1c4fd1; } .ds-field input { font-family:inherit; font-size:1rem; color:#0f1b2e; background:#f5f8fc; border:1px solid #c6d2e4; border-radius:3px; padding:.72rem .8rem; width:100%; transition:border-color .15s, box-shadow .15s; } .ds-field input::placeholder { color:#5a6880; opacity:1; } .ds-field input:focus { outline:none; border-color:#1c4fd1; box-shadow:0 0 0 3px color-mix(in srgb,#1c4fd1 20%,transparent); }"
+    },
+    {
+      "name": "Scroll-Spy Nav Link",
+      "kind": "nav",
+      "refersTo": "nav",
+      "description": "Header nav link with an active underline that wipes in left-to-right.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-a\" href=\"#\">Ueber</a><a class=\"ds-nav-a\" aria-current=\"page\" href=\"#\">Leistungen</a><a class=\"ds-nav-a\" href=\"#\">Kontakt</a></nav>",
+      "css": ".ds-nav { display:flex; align-items:center; gap:2.1rem; font-family:'Libre Franklin',system-ui,sans-serif; } .ds-nav-a { position:relative; font-weight:600; font-size:.95rem; color:#43516a; text-decoration:none; padding:.35rem 0; } .ds-nav-a::after { content:''; position:absolute; left:0; right:100%; bottom:-2px; height:2px; background:#1c4fd1; transition:right .2s; } .ds-nav-a:hover { color:#0f1b2e; } .ds-nav-a[aria-current='page'] { color:#123a97; } .ds-nav-a[aria-current='page']::after { right:0; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Frankfurt House of Quiet Standing",
+    "overview": "EastEnd46 is a light, institutional corporate world executed straight, held to craft level. It opens on a full-bleed Frankfurt-skyline video, then settles into airy, text-forward calm: trust before effect. The palette is a light cool ground with white cards, banded by deep-navy dark sections. One institutional blue is the sole voiced accent, with deep and interactive siblings for states; a single warm brass appears only to distinguish Beteiligung from Beratung. Density is low and deliberate, motion is minimal, and everything honors prefers-reduced-motion. The world deliberately carries no person and no portfolio section: the house stands, the individual recedes.",
+    "keyCharacteristics": [
+      "Light cool ground + white cards, banded by deep-navy sections",
+      "One institutional blue as the only accent; brass strictly for the equity/advisory distinction",
+      "Single family (Libre Franklin variable) on a fluid clamp scale with tabular figures",
+      "3px radius, hairlines, and soft blurred structural shadows — no glow",
+      "Full-bleed skyline video hero with scrim, poster, and reduced-motion fallback"
+    ],
+    "rules": [
+      { "name": "The One Voice Rule", "body": "Institutional Blue is the only voiced accent. If a surface needs a second color to feel finished, it is over-decorated — subtract instead of adding a hue.", "section": "colors" },
+      { "name": "The Brass-For-Meaning Rule", "body": "Warm brass appears only where it carries meaning: distinguishing Beteiligung from Beratung. It is never used to decorate, warm up, or accent a surface for its own sake.", "section": "colors" },
+      { "name": "The Single-Family Rule", "body": "One family (Libre Franklin) carries everything. Hierarchy comes from size, weight (400/600/700), and tracking — never from a second typeface or a default system stack.", "section": "typography" },
+      { "name": "The Tabular Figures Rule", "body": "Numeric facts and principle numerals use font-variant-numeric: tabular-nums so figures align in a column.", "section": "typography" },
+      { "name": "The No-Glow Rule", "body": "Shadows are downward, navy-tinted, and blurred to read as light from above. No colored glows, no hard offset shadows — the focus ring is the only soft blue halo, and it is a state, not decoration.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep Institutional Blue (#1c4fd1) the single accent voice — buttons, links, rules, focus, active nav, bullets.",
+      "Do reserve brass (#a9863f) strictly for the Beteiligung/Beratung distinction.",
+      "Do hold every corner to the 3px radius and draw structure with 1-2px hairlines.",
+      "Do lift surfaces only with the navy-tinted offset+blur shadows; keep the page near-flat and tonally banded.",
+      "Do honor prefers-reduced-motion: poster instead of autoplay, no reveal transitions, no scroll cue.",
+      "Do set all headings in Libre Franklin with tight negative tracking; use tabular figures for numeric facts."
+    ],
+    "donts": [
+      "Don't introduce a second accent hue or a warm decorative color; if a surface needs another color to feel done, subtract instead.",
+      "Don't use glows, colored shadows, or hard offset shadows — the soft blue focus ring is the only halo, and it is a state.",
+      "Don't round corners softly or exceed 3px (the 99px pill is only for the demo badge).",
+      "Don't add a second typeface or fall back to a default system stack for display type.",
+      "Don't add a person or portfolio section — the house stands, the individual recedes.",
+      "Don't let the video hero play without a scrim, poster, and reduced-motion fallback."
+    ]
+  }
+}
