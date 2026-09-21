@@ -11,12 +11,16 @@ gekennzeichnet.
 |---|---|---|---|
 | [`mainkontor/`](mainkontor/) | **Mainkontor Beteiligungen** | Mittelstands-Beteiligungen, langfristig, Nachfolge | „Kontorbuch / Handelsregister" — warmes Papier, Kontor-Grün, Serifen |
 | [`ostend/`](ostend/) | **Ostend Beteiligungen** | Business-Angel / Growth / Venture in Sport, Fußball, Medien & Software | hell, Blautöne, Broadcast-/Matchday-Sprache |
+| [`eastend46/`](eastend46/) | **EastEnd46** | Beratungs- **und** Beteiligungsgesellschaft, generisch/professionell | clean, hell, institutionell; Frankfurt-Skyline-**Video**-Hero |
 
 - **Mainkontor** liegt in zwei Fassungen vor: mehrseitig (`mainkontor/index.html` + Unterseiten,
   `mainkontor/assets/`) und als One-Pager in einer einzigen, in sich geschlossenen Datei
   (`mainkontor/mainkontor-onepager.html`). Details: [`mainkontor/README.md`](mainkontor/README.md).
 - **Ostend** ist ein One-Pager als einzelne, in sich geschlossene Datei
   (`ostend/ostend-onepager.html`); Quell-Assets unter `ostend/assets/`.
+- **EastEnd46** ist ein One-Pager (`eastend46/index.html`) mit `assets/` — inkl. eines
+  Frankfurt-Skyline-**Video-Heros** (selbst erzeugter, lizenzfreier Platzhalter; echter Drohnen-Clip
+  ist als Slot vorbereitet). Details + Video-Quellen: [`eastend46/README.md`](eastend46/README.md).
 
 Gemeinsame Funktionen beider Sites: durchscrollbarer One-Pager mit festem Menü + Scroll-Spy,
 Kontaktformular mit konfigurierbarem Webhook (leer = Demo-Modus), Client-Validierung, Anti-Spam-

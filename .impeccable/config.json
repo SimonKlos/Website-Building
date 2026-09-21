@@ -38,6 +38,15 @@
         ],
         "createdAt": "2026-09-09T11:21:45.845Z",
         "reason": "Direction motif: ledger booking lines, not decorative stripes (as v1)."
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "eastend46/index.html"
+        ],
+        "createdAt": "2026-09-21T16:30:21.949Z",
+        "reason": "Full-bleed Video-Hero (Skyline) ist gewollt randlos; Inhaltssektionen sind großzügig via .wrap eingerückt (Detector kann fluide/vh-Paddings nicht parsen)."
       }
     ]
   }
